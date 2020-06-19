@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This script is displaying FROM 1 TO 10
+#displays bad luck for the 4th loop iteration
+#displays good luck for the 8th loop iteration
+#displays Holberton School for the other iterations
+
+x=1
+while [ $x -le 10 ] 
+do
+
+    if [ $x -eq 4 ]
+    then
+        echo "bad luck"
+    elif [ $x -eq 8 ]
+    then
+        echo "good luck"
+    else
+        echo "Holberton School"
+    fi
+    x=$(( x + 1 ))
+done
