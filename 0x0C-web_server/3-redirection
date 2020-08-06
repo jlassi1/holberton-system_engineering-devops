@@ -7,7 +7,7 @@ echo "Holberton School" > /var/www/html/index.nginx-debian.html
 echo "server {
     listen 80;
     listen [::]:80 default_server;
-    root   /var/www//htm/l;
+    root   /var/www//htm/;
     index index.nginx-debian.html;
     location /redirect_me {
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
