@@ -4,7 +4,8 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo service nginx start
 sudo chmod 777 /etc/nginx/sites-available/default
-sudo echo "server {
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+echo "server {
     listen 80;
     listen [::]:80 default_server;
     root /var/www/html;
