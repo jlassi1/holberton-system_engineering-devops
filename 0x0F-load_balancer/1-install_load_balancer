@@ -5,9 +5,10 @@ sudo apt-get install -y software-properties-common
 sudo add-apt-repository ppa:vbernat/haproxy-1.8
 sudo apt-get update
 sudo apt-get install -y haproxy
+
 echo "ENABLED=1" >> /etc/default/haproxy
 
-echo -e "
+printf %s "
 listen holberton
     bind :80
 	mode http
