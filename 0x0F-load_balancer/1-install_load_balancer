@@ -12,6 +12,8 @@ printf %s"
 listen holberton
     bind :80
 	mode http
+    default_backend webserver
+    backend webserver
 	balance roundrobin
     server 1391-web-01 34.73.99.74:80 check
     server 1391-web-02 34.73.12.41:80 check
