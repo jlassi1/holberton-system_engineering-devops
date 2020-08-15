@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# service (init) must say that nginx is not running ← for real
-sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx restart
-sudo pkill -o nginx
+#short debugging to stop nginx from running 
+#sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo systemctl reload nginx
+sudo systemctl stop nginx
