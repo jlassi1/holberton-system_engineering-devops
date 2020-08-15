@@ -3,7 +3,14 @@
 exec {'http header':
 command  => 'sudo apt-get update -y;
 sudo apt-get install nginx -y;
-sudo sed -i "45i \\\n\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf;
+sudo echo "server {                                                                  
+    listen 80;                                                                  
+    listen [::]:80 default_server;                                              
+    root   /var/www//html;                                                      
+    index index.nginx-debian.html index.nginx-debian.html;
+    add_header X-Served-By $HOSTNAME;                    
+                                                                     
+}" > /etc/nginx/sites-available/default;
 service nginx restart',
 provider => shell,
 }

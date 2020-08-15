@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#The goal here is to be able to track which web server is answering our HTTP requests
+# The goal here is to be able to track which web server is answering our HTTP requests
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo chmod 777 /var/www/html/index.nginx-debian.html
