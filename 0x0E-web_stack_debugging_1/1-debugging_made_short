@@ -2,4 +2,4 @@
 # service (init) must say that nginx is not running ← for real
 sudo rm /etc/nginx/sites-enabled/*
 sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx stop
+sudo service nginx -s quit
