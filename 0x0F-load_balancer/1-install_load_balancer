@@ -19,4 +19,5 @@ listen holberton
     server 1391-web-02 35.231.27.105:80 check
 
 " >> /etc/haproxy/haproxy.cfg
+sudo haproxy -c -f /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
