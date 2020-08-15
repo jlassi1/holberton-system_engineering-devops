@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #short debugging to stop nginx from running 
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo systemctl reload nginx
-sudo systemctl stop nginx
+sudo service nginx restart
+sudo pkill -o nginx
