@@ -9,13 +9,12 @@ sudo apt-get install -y haproxy
 echo "ENABLED=1" >> /etc/default/haproxy
 
 printf %s"
-listen holberton
-    bind :80
+frontend holberton
+    bind *:80
 	mode http
     default_backend webserver
 
 backend webserver
-    mode http
 	balance roundrobin
     server 1391-web-01 34.73.99.74:80 check
     server 1391-web-02 35.231.27.105:80 check
