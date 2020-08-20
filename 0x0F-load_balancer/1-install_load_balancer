@@ -17,7 +17,7 @@ frontend holberton
 backend webserver
 	balance roundrobin
     server 1391-web-01 34.73.99.74:80 check
-    server 1391-web-02 35.231.27.105:80 check
+    server 1391-web-02 35.227.2.215:80 check
 
 " >> /etc/haproxy/haproxy.cfg
 sudo haproxy -c -f /etc/haproxy/haproxy.cfg
