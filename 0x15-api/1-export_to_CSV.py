@@ -17,9 +17,9 @@ if __name__ == "__main__":
         USERNAME = usr.get('username')
         USER_ID = usr.get('id')
     FILE = str(USER_ID) + '.csv'
-with open(FILE, mode='w') as f:
-    csv = csv.writer(f, quoting=csv.QUOTE_ALL)
-    for tasks in todo:
-        TASK_COMPLETED_STATUS = tasks.get("completed")
-        TASK_TITLE = tasks.get("title")
-        csv.writerow([USER_ID, USERNAME, TASK_COMPLETED_STATUS, TASK_TITLE])
+    with open(FILE, mode='w') as f:
+        csv = csv.writer(f, delimiter=',', quoting=csv.QUOTE_ALL)
+        for tasks in todo:
+            TASK_STATUS = tasks.get("completed")
+            TASK_TITLE = tasks.get("title")
+            csv.writerow([USER_ID, USERNAME, TASK_STATUS, TASK_TITLE])
