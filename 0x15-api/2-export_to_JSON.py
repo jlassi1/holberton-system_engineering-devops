@@ -20,5 +20,9 @@ if __name__ == "__main__":
     data = {USER_ID: []}
     with open(FILE, mode='w') as f:
         for tasks in todo:
-            data[USER_ID].append(tasks)
+            new_dic = {}
+            new_dic["task"] = tasks.get('title')
+            new_dic["completed"] = tasks.get('completed')
+            new_dic["username"] = USERNAME
+            data[USER_ID].append(new_dic)
         json.dump(data, f)
