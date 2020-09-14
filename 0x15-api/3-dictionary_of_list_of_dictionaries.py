@@ -18,9 +18,6 @@ if __name__ == "__main__":
         user = users.json()
 
         all_todo[user_id] = []
-        for usr in user:
-            USERNAME = usr.get('username')
-            USER_ID = usr.get('id')
         for tasks in todo:
             data = {}
             data["task"] = tasks.get('title')
