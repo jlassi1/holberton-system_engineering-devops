@@ -19,6 +19,6 @@ if __name__ == "__main__":
         if tasks.get("completed"):
             NUMBER_OF_DONE_TASKS += 1
             TASK_TITLE += "\t " + tasks["title"] + "\n"
-    print("Employee {} is done with tasks({}/{})".
+    print("Employee {} is done with tasks({}/{}):".
           format(EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, len(todo)))
     print("{}".format(TASK_TITLE)[:-1])
