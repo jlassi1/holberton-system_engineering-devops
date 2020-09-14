@@ -21,13 +21,11 @@ if __name__ == "__main__":
         for usr in user:
             USERNAME = usr.get('username')
             USER_ID = usr.get('id')
-        data = {USER_ID: []}
         for tasks in todo:
-            new_dic = {}
-            new_dic["task"] = tasks.get('title')
-            new_dic["completed"] = tasks.get('completed')
-            new_dic["username"] = USERNAME
-            data[USER_ID].append(new_dic)
+            data = {}
+            data["task"] = tasks.get('title')
+            data["completed"] = tasks.get('completed')
+            data["username"] = USERNAME
         all_todo[user_id].append(data)
     with open('todo_all_employees.json', mode='w') as f:
         json.dump(all_todo, f)
