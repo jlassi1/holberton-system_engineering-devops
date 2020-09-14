@@ -14,7 +14,7 @@ if __name__ == "__main__":
     user = users.json()
 
     for usr in user:
-        USERNAME = usr.get('name')
+        USERNAME = usr.get('username')
         USER_ID = usr.get('id')
     FILE = str(USER_ID) + '.csv'
 with open(FILE, mode='w') as f:
