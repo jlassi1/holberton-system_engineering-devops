@@ -3,7 +3,7 @@ server {
     listen [::]:80 default_server;
     root   /var/www//html;
     index index.nginx-debian.html index.nginx-debian.html;
-    server_name _;
+    server_name _ khawla.tech;
     location /redirect_me {
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
     }
@@ -17,12 +17,16 @@ server {
                 proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
         }
 
-        location /static {
-                alias /home/ubuntu/AirBnB_clone_v4/web_dynamic/static;
+        location /hbnb_static {
+                alias /data/web_static/current;
+                index index.html index.htm;
         }
-
         location /api/ {
                 proxy_pass http://127.0.0.1:5002;
+        }
+
+          location /static {
+                proxy_pass http://127.0.0.1:5003;
         }
 
 
@@ -32,9 +36,6 @@ server {
 
 
         location / {
-                # First attempt to serve request as file, then
-                # as directory, then fall back to displaying a 404.
-                try_files $uri $uri/ =404;
-                proxy_pass http://0.0.0.0:5003/2-hbnb;
+                proxy_pass http://127.0.0.1:5003/2-hbnb;
         }
 }
